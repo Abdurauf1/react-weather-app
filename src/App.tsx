@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
-import { CurrentWeather, Search, Forecast } from "./components";
+import { CurrentWeather, Search, Forecast, Nav } from "./components";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -30,11 +30,14 @@ function App() {
       });
   };
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
-    </div>
+    <>
+      <Nav />
+      <div className="container mx-auto">
+        <Search onSearchChange={handleOnSearchChange} />
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+        {forecast && <Forecast data={forecast} />}
+      </div>
+    </>
   );
 }
 
