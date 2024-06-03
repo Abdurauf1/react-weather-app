@@ -1,4 +1,23 @@
-const CurrentWeather = ({ data }: any) => {
+interface PropType {
+  data: {
+    city: string;
+    weather: {
+      description: string;
+      icon: string;
+    }[];
+    main: {
+      temp: number;
+      feels_like: number;
+      humidity: number;
+      pressure: number;
+    };
+    wind: {
+      speed: number;
+    };
+  };
+}
+
+const CurrentWeather = ({ data }: PropType) => {
   return (
     <div className="weather">
       <div className="top">
@@ -6,11 +25,7 @@ const CurrentWeather = ({ data }: any) => {
           <p className="city">{data.city}</p>
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
-        <img
-          className="weather-icon"
-          src={`/icons/${data.weather[0].icon}.png`}
-          alt="weather"
-        />
+        <img className="weather-icon" src={`/icons/${data.weather[0].icon}.png`} alt="weather" />
       </div>
       <div className="bottom">
         <p className="temperature">{Math.round(data.main.temp)}°C</p>
