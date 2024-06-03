@@ -8,7 +8,7 @@ const CurrentWeather = ({ data }: any) => {
         </div>
         <img
           className="weather-icon"
-          src={`../assets/icons/${data.weather[0].icon}.png`}
+          src={`/icons/${data.weather[0].icon}.png`}
           alt="weather"
         />
       </div>

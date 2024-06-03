@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
-import { CurrentWeather, Search, Forecast, Nav } from "./components";
+import { CurrentWeather, Search, Forecast, Navbar } from "./components";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -31,8 +31,8 @@ function App() {
   };
   return (
     <>
-      <Nav />
-      <div className="container mx-auto">
+      <Navbar />
+      <div className="max-w-2xl mx-auto mt-10 px-5">
         <Search onSearchChange={handleOnSearchChange} />
         {currentWeather && <CurrentWeather data={currentWeather} />}
         {forecast && <Forecast data={forecast} />}

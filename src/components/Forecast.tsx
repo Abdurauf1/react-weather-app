@@ -26,7 +26,7 @@ const Forecast = ({ data }: any) => {
                 <div className="daily-item">
                   <img
                     className="icon-small"
-                    src={`../assets/icons/${item.weather[0].icon}.png`}
+                    src={`icons/${item.weather[0].icon}.png`}
                     alt="weather"
                   />
                   <label className="day">{forecastDays[index]}</label>
