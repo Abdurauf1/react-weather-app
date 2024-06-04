@@ -14,20 +14,20 @@ interface Wind {
   speed: number;
 }
 
-interface WeatherData {
+interface WeatherType {
   city: string;
   weather: Weather[];
   main: Main;
   wind: Wind;
 }
 
-interface PropType {
-  data: WeatherData;
+interface WeatherDataType {
+  data: WeatherType;
 }
 
-const CurrentWeather = ({ data }: PropType) => {
+const CurrentWeather = ({ data }: WeatherDataType) => {
   return (
-    <div className="w-full sm:w-[400px] mx-auto bg-white py-5 px-5 rounded">
+    <div className="w-full sm:w-[400px] mx-auto bg-white py-5 px-5 rounded mb-10">
       <div className="flex items-center justify-between">
         <div>
           <p className="font-bold text-black text-2xl">{data.city}</p>
