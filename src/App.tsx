@@ -6,7 +6,7 @@ import { CurrentWeather, Search, Forecast, Navbar } from "./components";
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  const [islLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnSearchChange = (searchData: any) => {
     const [lat, lon] = searchData.value.split(" ");
@@ -36,7 +36,6 @@ function App() {
       <Navbar />
       <div className="max-w-2xl mx-auto mt-10 px-5 pb-10">
         <Search onSearchChange={handleOnSearchChange} />
-        {islLoading ? <CircularProgress /> : ""}
         {currentWeather && <CurrentWeather data={currentWeather} />}
         {forecast && <Forecast data={forecast} />}
       </div>
