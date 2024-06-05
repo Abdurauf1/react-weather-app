@@ -1,7 +1,7 @@
 import Search from "./Search";
+import Navbar from "./Navbar";
 import Forecast from "./Forecast";
 import CurrentWeather from "./CurrentWeather";
-import Navbar from "./Navbar";
 
 export {
     Search,

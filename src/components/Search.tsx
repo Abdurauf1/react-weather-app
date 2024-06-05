@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { GEO_API_OPTIONS, GEO_API_URL } from "../api";
 import { AsyncPaginate } from "react-select-async-paginate";
+import { GEO_API_OPTIONS, GEO_API_URL } from "../api";
 
 interface PropType {
   onSearchChange: (parameter: string) => void;
