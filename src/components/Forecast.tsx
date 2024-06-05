@@ -1,3 +1,4 @@
+import { ExpandMore } from "@mui/icons-material/";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 
 const WEEK_DAYS: string[] = [
@@ -59,45 +60,49 @@ const Forecast = ({ data }: WeatherDataType) => {
       <h1 className="text-3xl font-semibold mb-3">Daily</h1>
       {data.list.splice(0, 7).map((item: ForecastItem, index: number) => (
         <Accordion key={index} className="rounded mb-1">
-          <AccordionSummary>
-            <div className="flex justify-between">
-              <div className="flex items-center">
+          <AccordionSummary expandIcon={<ExpandMore />}>
+            <div className="w-full flex justify-between">
+              <div className="flex items-center gap-3">
                 <img className="w-12" src={`icons/${item.weather[0].icon}.png`} alt="weather" />
                 <label className="font-semibold text-black">{forecastDays[index]}</label>
               </div>
-              <div className="flex items-center">
-                <label>{item.weather[0].description}</label>
-                <label>
+              <div className="flex items-center gap-3 mr-3">
+                <label className="font-semibold">{item.weather[0].description}</label>
+                <label className="text-xs">
                   {Math.round(item.main.temp_max)}°C /{Math.round(item.main.temp_min)}°C
                 </label>
               </div>
             </div>
           </AccordionSummary>
           <AccordionDetails>
-            <div>
-              <div>
-                <label>Pressure:</label>
-                <label>{item.main.pressure}</label>
+            <div className="flex justify-between gap-3">
+              <div className="w-1/2">
+                <div className="flex justify-between">
+                  <label>Pressure:</label>
+                  <label>{item.main.pressure}</label>
+                </div>
+                <div>
+                  <label>Humidity:</label>
+                  <label>{item.main.humidity}</label>
+                </div>
+                <div>
+                  <label>Clouds:</label>
+                  <label>{item.clouds.all}%</label>
+                </div>
               </div>
-              <div>
-                <label>Humidity:</label>
-                <label>{item.main.humidity}</label>
-              </div>
-              <div>
-                <label>Clouds:</label>
-                <label>{item.clouds.all}%</label>
-              </div>
-              <div>
-                <label>Wind speed:</label>
-                <label>{item.wind.speed} m/s</label>
-              </div>
-              <div>
-                <label>Sea level:</label>
-                <label>{item.main.sea_level}m</label>
-              </div>
-              <div>
-                <label>Feels like:</label>
-                <label>{item.main.feels_like}°C</label>
+              <div className="w-1/2">
+                <div>
+                  <label>Wind speed:</label>
+                  <label>{item.wind.speed} m/s</label>
+                </div>
+                <div>
+                  <label>Sea level:</label>
+                  <label>{item.main.sea_level}m</label>
+                </div>
+                <div>
+                  <label>Feels like:</label>
+                  <label>{item.main.feels_like}°C</label>
+                </div>
               </div>
             </div>
           </AccordionDetails>
