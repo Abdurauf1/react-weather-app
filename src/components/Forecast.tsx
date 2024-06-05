@@ -79,29 +79,29 @@ const Forecast = ({ data }: WeatherDataType) => {
               <div className="w-1/2">
                 <div className="flex justify-between">
                   <label>Pressure:</label>
-                  <label>{item.main.pressure}</label>
+                  <label className="text-slate-500">{item.main.pressure}</label>
                 </div>
-                <div>
+                <div className="flex justify-between">
                   <label>Humidity:</label>
-                  <label>{item.main.humidity}</label>
+                  <label className="text-slate-500">{item.main.humidity}</label>
                 </div>
-                <div>
+                <div className="flex justify-between">
                   <label>Clouds:</label>
-                  <label>{item.clouds.all}%</label>
+                  <label className="text-slate-500">{item.clouds.all}%</label>
                 </div>
               </div>
               <div className="w-1/2">
-                <div>
+                <div className="flex justify-between">
                   <label>Wind speed:</label>
-                  <label>{item.wind.speed} m/s</label>
+                  <label className="text-slate-500">{item.wind.speed} m/s</label>
                 </div>
-                <div>
+                <div className="flex justify-between">
                   <label>Sea level:</label>
-                  <label>{item.main.sea_level}m</label>
+                  <label className="text-slate-500">{item.main.sea_level}m</label>
                 </div>
-                <div>
+                <div className="flex justify-between">
                   <label>Feels like:</label>
-                  <label>{item.main.feels_like}°C</label>
+                  <label className="text-slate-500">{item.main.feels_like}°C</label>
                 </div>
               </div>
             </div>
