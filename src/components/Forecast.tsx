@@ -1,16 +1,6 @@
 import { ExpandMore } from "@mui/icons-material/";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 
-const WEEK_DAYS: string[] = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
-
 interface Weather {
   description: string;
   icon: string;
@@ -47,6 +37,16 @@ interface ForecastData {
 interface WeatherDataType {
   data: ForecastData;
 }
+
+const WEEK_DAYS: string[] = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
 const Forecast = ({ data }: WeatherDataType) => {
   const dayInAWeek: number = new Date().getDay();

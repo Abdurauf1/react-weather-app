@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { CircularProgress } from "@mui/material";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
 import { CurrentWeather, Search, Forecast, Navbar } from "./components";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnSearchChange = (searchData: any) => {
     const [lat, lon] = searchData.value.split(" ");
