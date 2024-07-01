@@ -77,29 +77,29 @@ const Forecast = ({ data }: WeatherDataType) => {
           <AccordionDetails>
             <div className="flex justify-between gap-3">
               <div className="w-1/2">
-                <div className="flex ">
+                <div className="flex justify-between">
                   <label>Pressure:</label>
                   <label className="text-slate-500">{item.main.pressure}</label>
                 </div>
-                <div className="flex ">
+                <div className="flex justify-between">
                   <label>Humidity:</label>
                   <label className="text-slate-500">{item.main.humidity}</label>
                 </div>
-                <div className="flex ">
+                <div className="flex justify-between">
                   <label>Clouds:</label>
                   <label className="text-slate-500">{item.clouds.all}%</label>
                 </div>
               </div>
               <div className="w-1/2">
-                <div className="flex ">
+                <div className="flex justify-between">
                   <label>Wind speed:</label>
                   <label className="text-slate-500">{item.wind.speed} m/s</label>
                 </div>
-                <div className="flex ">
+                <div className="flex justify-between">
                   <label>Sea level:</label>
                   <label className="text-slate-500">{item.main.sea_level}m</label>
                 </div>
-                <div className="flex ">
+                <div className="flex justify-between">
                   <label>Feels like:</label>
                   <label className="text-slate-500">{item.main.feels_like}°C</label>
                 </div>
