@@ -56,10 +56,10 @@ const Forecast = ({ data }: WeatherDataType) => {
   );
 
   return (
-    <>
+    <div className="w-full">
       <h1 className="text-3xl font-semibold mb-3">Daily</h1>
       {data.list.splice(0, 7).map((item: ForecastItem, index: number) => (
-        <Accordion key={index} className="rounded mb-1">
+        <Accordion key={index} className="rounded mb-1 w-full">
           <AccordionSummary expandIcon={<ExpandMore />}>
             <div className="w-full flex justify-between">
               <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ const Forecast = ({ data }: WeatherDataType) => {
           </AccordionDetails>
         </Accordion>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -42,7 +42,7 @@ const Search = ({ onSearchChange }: PropType) => {
   return (
     <>
       <AsyncPaginate
-        className="mb-6"
+        className="mb-6 w-full"
         placeholder="Search city"
         debounceTimeout={600}
         value={search}
